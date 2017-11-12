@@ -175,13 +175,23 @@ Sur les trois graphiques ci-dessous, on met côte à côte le sinus et le
 polynôme $1 \over {1 + 10 . x^2}$ (les courbes bleues) ainsi que les fonctions
 citées précédemment (les courbes oranges).
 
-![Vandermonde](img/vandermonde.png)
+
+## Vandermonde
+
+![Vandermonde sinus](img/vandermonde-sin.png)
+![Vandermonde polynôme](img/vandermonde-polynome.png)
 
 
-![Lagrange](img/lagrange.png)
+## Lagrange
+
+![Lagrange sinus](img/lagrange-sin.png)
+![Lagrange polynôme](img/lagrange-polynome.png)
 
 
-![Tchebychev](img/tchebychev.png)
+## Tchebychev
+
+![Tchebychev sinus](img/tchebychev-sin.png)
+![Tchebychev polynôme](img/tchebychev-polynome.png)
 
 \newpage
 
