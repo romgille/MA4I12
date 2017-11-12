@@ -54,6 +54,9 @@ def lagrange(X, Y, x):
     return P
 
 def maxGap(Y1, Y2):
+    """
+    Return the maximum gap for values in the same position in lists Y1, Y2
+    """
     max = 0
     for i in range( len(Y1) ) :
         gap = abs( Y1[i] - Y2[i] )
@@ -62,6 +65,9 @@ def maxGap(Y1, Y2):
     return round(max,4)
 
 def display(X, Y, P, n, labelFnt, labelP, subplotNumber):
+    """
+    Display functions Y, P
+    """
     plt.subplot(subplotNumber)
     plt.plot(X, Y, label=labelFnt)
     plt.plot(X, P, label=labelP)
