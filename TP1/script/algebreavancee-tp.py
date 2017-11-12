@@ -59,15 +59,15 @@ def maxGap(Y1, Y2):
         gap = abs( Y1[i] - Y2[i] )
         if gap > max:
             max = gap
-    return round(max,14)
+    return round(max,4)
 
-def display(X, Y, gap, P, n, labelFnt, labelP, subplotNumber):
+def display(X, Y, P, n, labelFnt, labelP, subplotNumber):
     plt.subplot(subplotNumber)
     plt.plot(X, Y, label=labelFnt)
     plt.plot(X, P, label=labelP)
     plt.legend()
-    plt.text(-0.2, -0.25, "Number of interpolation points: " + str(n))
-    plt.text(-0.2, -0.42, "Maximum gap:" + str( gap ))
+    plt.text(-1, 0.5, "Number of interpolation points: " + str(n))
+    plt.text(-1, 0.35, "Maximum gap: " + str( maxGap(Y,P) ))
 
 def displayVandermonde (a, b, fnt, label, subplotNumber, n, N):
     """
@@ -82,7 +82,7 @@ def displayVandermonde (a, b, fnt, label, subplotNumber, n, N):
     yDisplay = [ fnt(x) for x in xDisplay ]
     # calc Vandermonde
     P = [ vandermonde(xCalc, yCalc, x) for x in xDisplay ]
-    display(xDisplay, yDisplay, maxGap(yDisplay, P), P, n, label, "Vandermonde", subplotNumber)
+    display(xDisplay, yDisplay, P, n, label, "Vandermonde", subplotNumber)
 
 def displayLagrange (a, b, fnt, label, subplotNumber, n, N) :
     """
@@ -97,7 +97,7 @@ def displayLagrange (a, b, fnt, label, subplotNumber, n, N) :
     yDisplay = [ fnt(x) for x in xDisplay ]
     # calc Lagrange
     P = [ lagrange(xCalc, yCalc, x) for x in xDisplay ]
-    display(xDisplay, yDisplay, maxGap(yDisplay, P), P, n, label, "Lagrange", subplotNumber)
+    display(xDisplay, yDisplay, P, n, label, "Lagrange", subplotNumber)
 
 def displayTchebychev(a, b, fnt, label, subplotNumber, n, N):
     """
@@ -112,10 +112,9 @@ def displayTchebychev(a, b, fnt, label, subplotNumber, n, N):
     yDisplay = [ fnt(x) for x in xDisplay ]
     # calc Lagrange
     P = [ lagrange(xCalc, yCalc, x) for x in xDisplay ]
-    display(xDisplay, yDisplay, maxGap(yDisplay, P), P, n, label, "Tchebychev", subplotNumber)
+    display(xDisplay, yDisplay, P, n, label, "Tchebychev", subplotNumber)
 
 if __name__ == '__main__' :
-    #with plt.xkcd():
     displayVandermonde(-10, 10, sin, "sin(x)", 321, 12, 500)
     displayVandermonde(-1, 1, lambda x: 1/(1+10*x**2), "1 / (1+10*x**2)", 322, 12, 500)
     displayLagrange(-10, 10, sin, "sin(x)", 323, 12, 500)
