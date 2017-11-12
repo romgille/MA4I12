@@ -175,13 +175,13 @@ Sur les trois graphiques ci-dessous, on met côte à côte le sinus et le
 polynôme $1 \over {1 + 10 . x^2}$ (les courbes bleues) ainsi que les fonctions
 citées précédemment (les courbes oranges).
 
-![Vandermonde](vandermonde.png)
+![Vandermonde](img/vandermonde.png)
 
 
-![Lagrange](lagrange.png)
+![Lagrange](img/lagrange.png)
 
 
-![Tchebychev](tchebychev.png)
+![Tchebychev](img/tchebychev.png)
 
 \newpage
 
