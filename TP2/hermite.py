@@ -1,47 +1,66 @@
 #!/usr/bin/python3
 
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
+from math import *
 
 def phi1(x):
-    if x <= 0 or x >= 1:
+    if x < 0 or x > 1:
         return 0
     return (x - 1)**2 * (2 * x + 1)
 
 
 def phi2(x):
-    if x <= 0 or x >= 1:
+    if x < 0 or x > 1:
         return 0
     return x**2 * (3 - 2 * x)
 
 
 def phi3(x):
-    if x <= 0 or x >= 1:
+    if x < 0 or x > 1:
         return 0
     return x * (x - 1)**2
 
 
 def phi4(x):
-    if x <= 0 or x >= 1:
+    if x < 0 or x > 1:
         return 0
     return x**2 * (x - 1)
 
 
 def foncHermite(X, Y, V, x):
-    xParam = (x - X[0])/(X[1] - X[0])
-    p = Y[0] * phi1(xParam) + Y[1] * phi2(xParam)
-    + (X[1] - X[0]) * (V[0] * phi3(xParam) + V[1] * phi4(xParam))
-    return p
+    P = 0
+    for k in range(len(X)-1):
+        d = X[k+1] - X[k]
+        t = (x - X[k]) / d
+        P += Y[k] * phi1(t) + Y[k+1] * phi2(t) + d * (V[k] * phi3(t) + V[k+1] * phi4(t))
+    return P
 
+def draw(X, Y, c):
+    plt.plot(X, Y, color=c)
 
-def draw(value):
-    return plot.plot(value)
+def tangentes(X, Y, V):
+    for k in range(len(X)):
+        Xtan = [X[k] - 1, X[k] + 1]
+        Ytan = [Y[k] - V[k], V[k] + Y[k]]
+        draw(Xtan, Ytan, '#ff00ff')
 
+if __name__ == '__main__' :
+    X = [1, 5, 7, 8, 10]
+    Y = [6, 2, -1, 1, 2]
+    V = [3/2, -3, 0, 4, 1]
 
-def main():
-    X = [1, 5]
-    Y = [6, 2]
-    V = [3/2, -3]
-    foncHermite(X, Y, V, 3)
+    N = 500
+    a = min(X)
+    b = max(X)
 
+    P = []
+    Xaff = []
+    Yaff = []
+    for k in range(N):
+        Xaff.append(a + k * (b-a)/N)
+        Yaff.append(foncHermite(X, Y, V, a + k * (b-a)/N))
 
-main()
+    tangentes(X, Y, V)
+
+    draw(Xaff, Yaff, '#0080ff')
+    plt.show()
