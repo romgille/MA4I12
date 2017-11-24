@@ -45,7 +45,7 @@ def drawPts(pts):
 
 def draw(pts):
     """
-        Draw a curve from an array of points
+    Draw a curve from an array of points
     """
     x, y = zip(*pts)
     plt.plot(x, y)
