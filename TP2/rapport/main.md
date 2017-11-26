@@ -60,7 +60,7 @@ et de `Y`.
 # Résultats
 
 Sur le graphique ci-dessous, on observe la fonction d'Hermite
-(`foncHermite(X, Y, V, x)`) avec pour données d'entrée : 
+(`foncHermite(X, Y, V, x)`) avec pour données d'entrée :
 
 * `X = [1, 5, 7, 8, 10]`
 * `Y = [6, 2, -1, 1, 2]`
