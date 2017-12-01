@@ -70,8 +70,3 @@ Sur le graphique ci-dessous, on observe la fonction d'Hermite
 Pour `N = 500`, et `k = (0, 1, 2, ..., N)`
 
 ![Fonction d'Hermite](img/hermite.png)
-
-
-# Interprétation des résultats
-
-PLOP

@@ -62,7 +62,3 @@ matrice $M$ et du vecteur $B$.
 # Résultats
 
 ![Spline](img/spline.png)
-
-# Interprétation des résultats
-
-PLOP

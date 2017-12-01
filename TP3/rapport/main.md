@@ -67,7 +67,3 @@ Ci-dessous on peut observer la courbe de Bézier (orange) créée à partir des
 points représentés par une croix rouge.
 
 ![Courbe de Bézier](img/bezier.png)
-
-# Interprétation des résultats
-
-PLOP
